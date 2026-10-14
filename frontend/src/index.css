@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply overflow-x-hidden;
+  }
+  body {
+    @apply font-body-md bg-surface-alabaster text-on-surface antialiased;
+  }
+}
+
+.site-background {
+  @apply bg-surface-canvas;
+}
+
+.admin-background {
+  @apply bg-slate-50;
+}

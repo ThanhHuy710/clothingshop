@@ -1,0 +1,35 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 15MB
+  application:
+    name: backend
+#config db
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/clothing_store?useSSL=false&serverTimezone=Asia/Ho_Chi_Minh&characterEncoding=UTF-8}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#config jpa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+#json with token
+jwt:
+  access-token-secret: ${JWT_ACCESS_SECRET:very-secure-secret-key-that-is-at-least-32-bytes-long-123456}
+  access-token-expiration-millis: ${JWT_ACCESS_EXPIRATION:86400000}
+  refresh-token-expiration-millis: ${JWT_REFRESH_EXPIRATION:2592000000}
+#cloudinary
+cloudinary:
+  cloud_name: ${CLOUDINARY_CLOUD_NAME:${cloud_name:hqiqib7n}}
+  api_key: ${CLOUDINARY_API_KEY:${api_key:288317817894312}}
+  api_secret: ${CLOUDINARY_API_SECRET:${api_secret:J6dsAUdBlaLuIITt3r9Sh8E2BiQ}}
